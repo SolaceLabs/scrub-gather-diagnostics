@@ -70,7 +70,6 @@ Cleaning up...
 Use: "gpg -o scrubbed-gather-diagnostics_14d_solace1025_2026-02-22T23.21.18.tgz -d scrubbed-gather-diagnostics_14d_solace1025_2026-02-22T23.21.18.tgz.gpg" to extract.
 Done!
 
-$
 ```
 
 
