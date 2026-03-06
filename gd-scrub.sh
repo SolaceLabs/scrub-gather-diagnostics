@@ -3,7 +3,6 @@ set -e
 
 CLEANUP_ENABLED=true
 USERS_FILE=known_users.txt
-#USERS_FILE=emea8-users.txt
 
 # Copyright (c) 2026 Aaron Lee, Solace
 # 
