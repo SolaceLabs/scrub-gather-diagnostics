@@ -2,16 +2,15 @@
 
 This was written for a customer that had a regulatory requirement to hide specific usernames from any diagnostic files that were sent to vendors.  Solace Support always ask for a "[Gather Diagnostics](https://docs.solace.com/Appliance/Gathering-Appliance-Diagnostics.htm)" file from any broker involved in an issue.  This "GD" tarball contains a multitude of logs and diagnostic files from the broker, and is essential for the Support team to perform their diagnoses.
 
+![gather-diagnostics diff screenshot before and after scrub](./screenshot.png)
 
 
 ## Usage
 
 Perform the gather diagnostics action as usual, but ensure the "**no-encrypt**" options is chosen:
 ```
-solace1025> en
-Command auto-completed to:  enable
-solace1025# ad
-Command auto-completed to:  admin
+solace1025> enable
+solace1025# admin
 solace1025(admin)# gather-diagnostics days-of-history 14 no-encrypt
 
 Starting to copy files...
@@ -33,7 +32,7 @@ Copy the generated file to your Linux box, or Mac, or WSL on Windows where this 
 
 ### User File
 
-By default, the script loads in the text file `known_users.txt`, and searches all the files within the gather diagnostics tarball for those names.  Please build your own list from LDAP or Active Directory or wherever.  Feel free to edit the name of the user file at the top of the script.
+By default, the script loads in the text file `known_users.txt`, and searches all the files within the gather diagnostics tarball for those names and obfuscates them.  Please build your own list from LDAP or Active Directory or wherever.  Feel free to edit the name of the user file at the top of the script.
 
 In my testing while building the script, it worked fine for 5000 usernames, although a bit slower.  If you have more usernames than that, or the script is breaking, please raise a GH Issue: there are some known improvements that could be made in this area.
 
