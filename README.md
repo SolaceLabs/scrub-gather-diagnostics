@@ -14,16 +14,10 @@ solace1025# admin
 solace1025(admin)# gather-diagnostics days-of-history 14 no-encrypt
 
 Starting to copy files...
-Finished copying files...
-
-Starting to run diagnostic commands...
 <SNIP>
-Finished running diagnostic commands...
-
-Creating encrypted tarball...
 Finished creating encrypted tarball...
 
-Diagnostics saved in: logs/gather-diagnostics_1d_solace1025_2026-03-06T00.00.18.tgz
+Diagnostics saved in: logs/gather-diagnostics_14d_solace1025_2026-02-22T23.21.18.tgz
 
 solace1025(admin)#
 ```
@@ -36,7 +30,7 @@ Copy the generated file to your Linux box, or Mac, or WSL on Windows where this 
 
 By default, the script loads in the text file `known_users.txt`, and searches all the files within the gather diagnostics tarball for those names and obfuscates them.  Please build your own list from LDAP or Active Directory or wherever.  Feel free to edit the name of the user file at the top of the script.
 
-In my testing while building the script, it worked fine for 5000 usernames, although a bit slower.  If you have more usernames than that, or the script is breaking, please raise a GH Issue: there are some known improvements that could be made in this area (improved regex, pre-regex hash check for performance, etc.).
+In my testing while building the script, it worked fine for 5000 usernames, although a bit slower.  If you have more usernames than that, or the script is breaking, please raise a GH Issue: there are some known improvements that could be made in this area (improved regex, pre-regex hash check for performance, etc.).  There's also [a little script](test/find-admin-usernames.sh) inside directory `test/` that you can use to extract _some_ of the usernames from your log files for testing.
 
 
 ### Running
