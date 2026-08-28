@@ -1,0 +1,21 @@
+version: 3
+project:
+  locator: SolaceLabs_scrub-gather-diagnostics
+  id: SolaceLabs_scrub-gather-diagnostics
+  name: scrub-gather-diagnostics
+  teams: []
+  labels:
+    - shell
+vendoredDependencies:
+  forceRescans: false
+  scanMethod: CLILicenseScan
+  licenseScanPathFilters:
+    exclude:
+      - "./.git"
+      - "./.github"
+paths:
+  exclude:
+    - ./.git
+    - ./.github
+telemetry:
+  scope: full
